@@ -1,0 +1,31 @@
+{
+  "name": "momentum",
+  "version": "1.0.0",
+  "description": "Streamline your life with the elegance of organization. Momentum turns your tasks into daily achievements, catapulting your productivity to new heights.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonypillot/momentum.git"
+  },
+  "keywords": [
+    "todo",
+    "list",
+    "organization"
+  ],
+  "author": "Anthony Pillot",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/anthonypillot/momentum/issues"
+  },
+  "homepage": "https://github.com/anthonypillot/momentum#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev -w momentum-frontend",
+    "dev:backend": "npm run dev -w momentum-backend",
+    "dev": "npm-run-all2 --parallel dev:*"
+  },
+  "dependencies": {
+    "npm-run-all2": "^6.2.0"
+  }
+}
