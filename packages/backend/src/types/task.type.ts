@@ -1,8 +1,8 @@
 export type Task = {
-  id: string;
+  _id?: string;
   title: string;
-  description: string;
-  status: string;
+  description?: string;
+  status: "todo" | "in-progress" | "done";
   createdAt: Date;
   updatedAt: Date;
 };

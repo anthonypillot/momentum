@@ -2,15 +2,13 @@
   "name": "momentum-backend",
   "version": "1.0.0",
   "description": "Streamline your life with the elegance of organization. Momentum turns your tasks into daily achievements, catapulting your productivity to new heights.",
-  "main": "src/main.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthonypillot/momentum.git"
   },
   "keywords": [
     "todo",
-    "list",
-    "organization"
+    "list"
   ],
   "author": "Anthony Pillot",
   "license": "GPL-3.0-or-later",
@@ -19,17 +17,19 @@
   },
   "homepage": "https://github.com/anthonypillot/momentum#readme",
   "scripts": {
-    "dev": "node --watch --require ts-node/register src/main.ts"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "dev": "node --env-file=.env --watch --require tsconfig-paths/register --require ts-node/register src/main.ts"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",
-    "dotenv": "^16.4.5",
     "fastify": "^4.27.0",
     "mongoose": "^8.4.1"
   },
   "devDependencies": {
     "pino-pretty": "^11.1.0",
-    "ts-node": "^10.4.0",
-    "typescript": "^5.2.2"
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.5"
   }
 }

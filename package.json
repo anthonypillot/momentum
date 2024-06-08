@@ -21,6 +21,9 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "database:up": "docker compose up --detach",
+    "database:down": "docker compose down",
     "dev:frontend": "npm run dev -w momentum-frontend",
     "dev:backend": "npm run dev -w momentum-backend",
     "dev": "npm-run-all2 --parallel dev:*"
