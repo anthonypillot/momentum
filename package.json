@@ -26,7 +26,8 @@
     "database:down": "docker compose down",
     "dev:frontend": "npm run dev -w momentum-frontend",
     "dev:backend": "npm run dev -w momentum-backend",
-    "dev": "npm-run-all2 --parallel dev:*"
+    "dev": "npm-run-all2 --parallel dev:*",
+    "start:backend": "npm run start -w momentum-backend"
   },
   "dependencies": {
     "npm-run-all2": "^6.2.0"

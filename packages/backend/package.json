@@ -18,8 +18,9 @@
   "homepage": "https://github.com/anthonypillot/momentum#readme",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc -p tsconfig.json",
-    "dev": "node --env-file=.env --watch --require tsconfig-paths/register --require ts-node/register src/main.ts"
+    "build": "npm run clean && tsc && tsc-alias",
+    "dev": "node --env-file=.env --watch --require tsconfig-paths/register --require ts-node/register src/main.ts",
+    "start": "node --env-file=.env dist/main.js"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "pino-pretty": "^11.1.0",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.5"
   }
