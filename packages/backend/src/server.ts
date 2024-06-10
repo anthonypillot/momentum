@@ -10,24 +10,20 @@ export default class MomentumServer {
   }
 
   private createFastify(): FastifyInstance {
-    if (process.env.NODE_ENV === "production") {
-      return Fastify({
-        logger: {
-          msgPrefix: "[Momentum] ",
-        },
-        disableRequestLogging: true,
-      });
-    } else {
-      return Fastify({
-        logger: {
-          msgPrefix: "[Momentum] ",
-          transport: {
-            target: "pino-pretty",
-          },
-        },
-        disableRequestLogging: true,
-      });
-    }
+    const msgPrefix = "[Momentum] ";
+    const loggerConfiguration = {
+      transport: {
+        target: "pino-pretty",
+      },
+    };
+
+    return Fastify({
+      logger: {
+        msgPrefix,
+        ...(process.env.NODE_ENV === "production" ? {} : loggerConfiguration),
+      },
+      disableRequestLogging: true,
+    });
   }
 
   public async start(): Promise<void> {
